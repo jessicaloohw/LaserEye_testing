@@ -1,6 +1,7 @@
 import numpy as np
 
-# To return the maximum difference between two adjacent numbers:
+
+# To calculate the maximum difference between two adjacent numbers
 def max_diff(input_list):
 
     diff = np.diff(input_list)
