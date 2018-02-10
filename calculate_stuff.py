@@ -8,6 +8,7 @@ def sum_nums(input_list):
 
     return ans
 
+
 # To calculate the maximum difference between two adjacent numbers
 def max_diff(input_list):
 
