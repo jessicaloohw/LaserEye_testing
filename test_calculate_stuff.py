@@ -13,6 +13,19 @@ def test_max_diff():
     assert(np.isclose(max_value3, 14))
 
 
+def test_min_max():
+
+    from calculate_stuff import min_max
+
+    min_max_val1 = min_max([1, 2, 3, 4, 5])
+    min_max_val2 = min_max([-1, -3, -5, 4, 2, 0])
+    min_max_val3 = min_max([-6.2, -5, -3, -1, 1.4, 1.4, 3])
+
+    assert(min_max_val1 == (1, 5))
+    assert(min_max_val2 == (-5, 4))
+    assert(min_max_val3 == (-6.2, 3))
+
+
 def test_sum_nums():
     from calculate_stuff import sum_nums
 
