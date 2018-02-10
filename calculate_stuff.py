@@ -13,7 +13,7 @@ def sum_nums(input_list):
 def min_max(input_list):
 
     min_max_val = (min(input_list), max(input_list))
-    
+
     return min_max_val
 
 
