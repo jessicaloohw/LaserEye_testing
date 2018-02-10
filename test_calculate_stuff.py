@@ -1,9 +1,8 @@
+import numpy as np
+
+
 def test_max_diff():
-
-
     from calculate_stuff import max_diff
-    import numpy as np
-
 
     max_value1 = max_diff([1, 2, 3, 4, 5])
     max_value2 = max_diff([9.0, 1.5, 3.2])
@@ -16,8 +15,6 @@ def test_max_diff():
 
 def test_sum_nums():
     from calculate_stuff import sum_nums
-    import numpy as np
-
 
     sum_1 = sum_nums([-1, 9.8, 7])
     sum_2 = sum_nums([-10, 0.5, 0.5, 5.5])
