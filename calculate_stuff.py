@@ -1,8 +1,8 @@
 import numpy as np
 
 def sum_nums(input_list):
-    sum = np.sum(input_list)
-    return sum
+    ans = np.sum(input_list)
+    return ans
 # To calculate the maximum difference between two adjacent numbers
 def max_diff(input_list):
 
