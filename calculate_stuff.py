@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def max_diff(input_list):
     """Returns the maximum absolute difference between two adjacent numbers
 

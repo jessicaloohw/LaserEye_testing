@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def test_max_diff():
 
     from calculate_stuff import max_diff
