@@ -24,8 +24,8 @@ def max_diff(input_list):
         max_val = np.max(abs_diff)
         if(np.isnan(max_val)):
             raise ValueError
-
-        lg.info(' | SUCCESS: input_list %s returned %g'
+            
+            lg.info(' | SUCCESS: input_list %s returned %g'
                 % (input_list, max_val))
         return max_val
 
@@ -46,3 +46,21 @@ def max_diff(input_list):
         print('An unknown error occurred.')
         lg.warning(' | WARNING: OMG AN UNKNOWN ERROR OCCURRED!')
         raise
+        
+        
+# To calculate the sum of list of numbers
+def sum_nums(input_list):
+
+    ans = np.sum(input_list)
+
+    return ans
+
+
+# returns a tuple of the min and max values in a list
+def min_max(input_list):
+
+    min_max_val = (min(input_list), max(input_list))
+
+    return min_max_val
+
+        

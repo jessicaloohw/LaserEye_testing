@@ -1,5 +1,7 @@
-def test_max_diff():
+import numpy as np
 
+def test_max_diff():
+  
     from calculate_stuff import max_diff
     import numpy as np
     import pytest
@@ -20,3 +22,28 @@ def test_max_diff():
 
     with pytest.raises(ValueError):
         max_diff([4, 5, float('nan')])
+        
+
+def test_min_max():
+
+    from calculate_stuff import min_max
+
+    min_max_val1 = min_max([1, 2, 3, 4, 5])
+    min_max_val2 = min_max([-1, -3, -5, 4, 2, 0])
+    min_max_val3 = min_max([-6.2, -5, -3, -1, 1.4, 1.4, 3])
+
+    assert(min_max_val1 == (1, 5))
+    assert(min_max_val2 == (-5, 4))
+    assert(min_max_val3 == (-6.2, 3))
+
+
+def test_sum_nums():
+    from calculate_stuff import sum_nums
+
+    sum_1 = sum_nums([-1, 9.8, 7])
+    sum_2 = sum_nums([-10, 0.5, 0.5, 5.5])
+    sum_3 = sum_nums([2, 5, 7, 8, 1])
+
+    assert(np.isclose(sum_1, 15.8))
+    assert(np.isclose(sum_2, -3.5))
+    assert(np.isclose(sum_3, 23))
