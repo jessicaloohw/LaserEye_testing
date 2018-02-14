@@ -4,7 +4,14 @@ import numpy as np
 # To calculate the sum of list of numbers
 def sum_nums(input_list):
 
-    ans = np.sum(input_list)
+    try:
+        ans = np.sum(input_list)
+    except IOError:
+        print("I/O Error. May be out of space.")
+    except TypeError:
+        print("Type Error. Input of wrong type.")
+    except ValueError:
+        print("Value Error. Not valid input.")
 
     return ans
 
