@@ -10,3 +10,6 @@
 *.fls
 *.fdb_latexmk
 env/
+*.pyc
+__pycache__/
+.pytest_cache/
