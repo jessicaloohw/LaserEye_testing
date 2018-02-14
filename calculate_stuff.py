@@ -1,3 +1,5 @@
+import numpy as np
+
 def max_diff(input_list):
     """Returns the maximum absolute difference between two adjacent numbers
 
@@ -24,7 +26,7 @@ def max_diff(input_list):
         max_val = np.max(abs_diff)
         if(np.isnan(max_val)):
             raise ValueError
-            
+
             lg.info(' | SUCCESS: input_list %s returned %g'
                 % (input_list, max_val))
         return max_val
@@ -46,8 +48,8 @@ def max_diff(input_list):
         print('An unknown error occurred.')
         lg.warning(' | WARNING: OMG AN UNKNOWN ERROR OCCURRED!')
         raise
-        
-        
+
+
 # To calculate the sum of list of numbers
 def sum_nums(input_list):
 
@@ -62,5 +64,3 @@ def min_max(input_list):
     min_max_val = (min(input_list), max(input_list))
 
     return min_max_val
-
-        

@@ -1,7 +1,7 @@
 import numpy as np
 
 def test_max_diff():
-  
+
     from calculate_stuff import max_diff
     import numpy as np
     import pytest
@@ -22,7 +22,7 @@ def test_max_diff():
 
     with pytest.raises(ValueError):
         max_diff([4, 5, float('nan')])
-        
+
 
 def test_min_max():
 
