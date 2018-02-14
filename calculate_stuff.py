@@ -4,8 +4,8 @@ def max_diff(input_list):
     :param input_list: a list of numbers
     :returns max_val: maximum absolute difference between two adjacent numbers
     :raises ImportError: if required modules are not found
-    :raises TypeError: if input_list contains anything other than numbers
-    :raises ValueError: if maximum difference is NaN
+    :raises TypeError: if input_list is not a list or contains anything other than numbers
+    :raises ValueError: if input_list contains less than two values or max_val is NaN
     """
 
     try:
