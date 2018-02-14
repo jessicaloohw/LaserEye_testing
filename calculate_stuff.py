@@ -4,9 +4,9 @@ def max_diff(input_list):
     :param input_list: a list of numbers
     :returns max_val: maximum absolute difference between two adjacent numbers
     :raises ImportError: if required modules are not found
-    :raises TypeError: if input_list is not a list
-                       or contains anything other than numbers
+    :raises TypeError: if input_list contains anything other than numbers
     :raises ValueError: if input_list contains less than two values
+                        or if input_list is not a list
                         or max_val is NaN
     """
 
@@ -20,9 +20,6 @@ def max_diff(input_list):
                        format='%(asctime)s %(message)s',
                        datefmt='%m/%d/%Y %I:%M:%S %p')
 
-        if not (type(input_list) is list):
-            raise TypeError
-
         diff = np.diff(input_list)
         abs_diff = np.abs(diff)
         max_val = np.max(abs_diff)
@@ -31,23 +28,22 @@ def max_diff(input_list):
 
         lg.info(' | SUCCESS: input_list %s returned %g'
                 % (input_list, max_val))
-
         return max_val
 
     except ImportError as e:
         print('ImportError: %s module not found.' % e.name)
         lg.debug(' | ABORTED: ImportError: %s' % e.name)
+        raise ImportError
     except TypeError:
         print('TypeError: input_list must be a list of integers/floats.')
         lg.debug(' | ABORTED: TypeError: input_list is %s (%s)'
                  % (input_list, type(input_list)))
+        raise TypeError
     except ValueError:
-        if(len(input_list) == 1):
-            print('ValueError: input_list must have at least two values.')
-            lg.debug(' | ABORTED: ValueError: input_list is %s' % input_list)
-        else:
-            print('ValueError: max_val is %g' % max_val)
-            lg.debug(' | ABORTED: ValueError: max_val is %g' % max_val)
+        print('ValueError: max_val is NaN')
+        lg.debug(' | ABORTED: ValueError: max_val is NaN')
+        raise ValueError
     except:
         print('An unknown error occurred.')
         lg.warning(' | WARNING: OMG AN UNKNOWN ERROR OCCURRED!')
+        raise
