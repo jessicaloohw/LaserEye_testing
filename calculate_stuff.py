@@ -6,7 +6,6 @@ def max_diff(input_list):
     :raises ImportError: if required modules are not found
     :raises TypeError: if input_list contains anything other than numbers
     :raises ValueError: if input_list contains less than two values
-                        or if input_list is not a list
                         or max_val is NaN
     """
 

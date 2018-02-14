@@ -16,9 +16,6 @@ def test_max_diff():
         max_diff(['a', 'b', 'c'])
 
     with pytest.raises(ValueError):
-        max_diff(7)
-
-    with pytest.raises(ValueError):
         max_diff([7])
 
     with pytest.raises(ValueError):
