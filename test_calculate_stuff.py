@@ -1,4 +1,3 @@
-import numpy as np
 
 
 def test_max_diff():
@@ -28,6 +27,7 @@ def test_max_diff():
 def test_min_max():
 
     from calculate_stuff import min_max
+    import numpy as np
 
     min_max_val1 = min_max([1, 2, 3, 4, 5])
     min_max_val2 = min_max([-1, -3, -5, 4, 2, 0])
@@ -40,6 +40,7 @@ def test_min_max():
 
 def test_sum_nums():
     from calculate_stuff import sum_nums
+    import numpy as np
 
     sum_1 = sum_nums([-1, 9.8, 7])
     sum_2 = sum_nums([-10, 0.5, 0.5, 5.5])
