@@ -1,3 +1,4 @@
+import numpy as np
 
 
 def max_diff(input_list):
@@ -28,7 +29,7 @@ def max_diff(input_list):
             raise ValueError
 
         lg.info(' | SUCCESS: input_list %s returned %g'
-                    % (input_list, max_val))
+                % (input_list, max_val))
         return max_val
 
     except ImportError as e:
@@ -52,57 +53,14 @@ def max_diff(input_list):
 
 # To calculate the sum of list of numbers
 def sum_nums(input_list):
-    """Returns sum of numbers in an input list
 
-    :param input_list: list of input numbers
-    :returns ans: sum of numbers in input list
-    :raises ImportError: required module is not found
-    :raises TypeError: input is not list of float/ints
-    :raises ValueError: input is not valid number
+    ans = np.sum(input_list)
 
-    """
-
-    try:
-
-        import numpy as np
-        import logging as lg
-
-        lg.basicConfig(filename='sum_nums.log',
-                       level=lg.DEBUG,
-                       format='%(asctime)s %(message)s',
-                       datefmt='%m/%d/%Y %I:%M:%S %p')
-
-        ans = np.sum(input_list)
-        if np.isnan(ans):
-            print("Type Error. sum of NaN value returned.")
-            raise ValueError
-
-        lg.info(' | SUCCESS: sum_nums returned %g'
-                % (ans))
-        return ans
-
-    except IOError as ie:
-        print("I/O Error. Module not found.")
-        lg.debug(' | ABORTED: ImportError: %s' % ie.name)
-        raise IOError
-    except TypeError:
-        print("Type Error. Input of must be type float/int.")
-        lg.debug(" | ABORTED: TypeError: input_list is of type (%s)"
-                 % (type(input_list)))
-        raise TypeError
-    except ValueError:
-        print("Value Error. Not valid input.")
-        lg.debug(" | ABORTED: ValueError: returned sum is invalid")
-        raise ValueError
-    except:
-        print("UNKNOWN Error.")
-        lg.warning("Warning: Unknown error ocurred.")
-        raise
+    return ans
 
 
 # returns a tuple of the min and max values in a list
 def min_max(input_list):
-
 
     min_max_val = (min(input_list), max(input_list))
 

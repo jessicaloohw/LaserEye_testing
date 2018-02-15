@@ -1,5 +1,5 @@
 .. LaserEye_testing documentation master file, created by
-   sphinx-quickstart on Thu Feb 15 10:00:30 2018.
+   sphinx-quickstart on Wed Feb 14 14:07:03 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
