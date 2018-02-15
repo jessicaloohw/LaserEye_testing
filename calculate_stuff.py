@@ -98,6 +98,7 @@ def sum_nums(input_list):
         lg.warning("Warning: Unknown error ocurred.")
         raise
 
+
 # returns a tuple of the min and max values in a list
 def min_max(input_list):
 
