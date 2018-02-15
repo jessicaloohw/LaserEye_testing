@@ -26,8 +26,8 @@ def max_diff(input_list):
         if(np.isnan(max_val)):
             raise ValueError
 
-            lg.info(' | SUCCESS: input_list %s returned %g'
-                    % (input_list, max_val))
+        lg.info(' | SUCCESS: input_list %s returned %g'
+            % (input_list, max_val))
         return max_val
 
     except ImportError as e:
