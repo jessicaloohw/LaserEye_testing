@@ -74,7 +74,7 @@ def sum_nums(input_list):
 
         ans = np.sum(input_list)
         if np.isnan(ans):
-            print("Type Error. NaN value returned.")
+            print("Type Error. sum of NaN value returned.")
             raise ValueError
         lg.info(' | SUCCESS: sum_nums returned %g'
                 % (ans))
