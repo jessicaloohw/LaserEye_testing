@@ -1,3 +1,6 @@
+
+__pycache__
+_build/
 *.aux
 *.log
 *.out
@@ -13,4 +16,3 @@ env/
 *.pyc
 __pycache__/
 .pytest_cache/
-_build/
