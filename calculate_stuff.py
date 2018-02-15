@@ -73,18 +73,30 @@ def sum_nums(input_list):
                        datefmt='%m/%d/%Y %I:%M:%S %p')
 
         ans = np.sum(input_list)
+        if np.isnan(ans):
+            print("Type Error. NaN value returned.")
+            raise ValueError
+        lg.info(' | SUCCESS: sum_nums returned %g'
+                % (ans))
         return ans
 
-    except IOError:
+    except IOError as ie:
         print("I/O Error. Module not found.")
+        lg.debug(' | ABORTED: ImportError: %s' % ie.name)
         raise IOError
     except TypeError:
         print("Type Error. Input of must be type float/int.")
+        lg.debug(" | ABORTED: TypeError: input_list is of type (%s)"
+                 % (type(input_list)))
         raise TypeError
     except ValueError:
         print("Value Error. Not valid input.")
+        lg.debug(" | ABORTED: ValueError: returned sum is invalid")
         raise ValueError
-
+    except:
+        print("UNKNOWN Error.")
+        lg.warning("Warning: Unknown error ocurred.")
+        raise
 
 # returns a tuple of the min and max values in a list
 def min_max(input_list):
