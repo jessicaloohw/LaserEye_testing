@@ -102,6 +102,7 @@ def sum_nums(input_list):
 # returns a tuple of the min and max values in a list
 def min_max(input_list):
 
+
     min_max_val = (min(input_list), max(input_list))
 
     return min_max_val
