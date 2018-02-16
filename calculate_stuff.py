@@ -98,5 +98,54 @@ def sum_nums(input_list):
 
 # returns a tuple of the min and max values in a list
 def min_max(input_list):
-    min_max_val = (min(input_list), max(input_list))
-    return min_max_val
+        """Returns a tuple of the minimum and maximum numbers in a list
+
+        :param input_list: a list of numbers
+
+        :returns min_max_val: tuple of minimum and maximum number
+        :raises ImportError: required modules are not available
+        :raises TypeError: input_list contains non-numerical data types
+        :raises ValueError: input_list contains no values
+        """
+
+        try:
+
+            import numpy as np
+            import logging as lg
+
+            lg.basicConfig(filename='min_max.log',
+                           level=lg.DEBUG,
+                           format='%(asctime)s %(message)s',
+                           datefmt='%m/%d/%Y %I:%M:%S %p')
+
+            if not all(isinstance(n, (int, float)) for n in input_list):
+                raise TypeError
+
+
+            min_max_val = (min(input_list), max(input_list))
+
+            if not (isinstance(min_max_val,tuple)):
+                print(type(min_max_val))
+                raise ValueError
+
+
+            lg.info(' | SUCCESS: min_max of %s is %s' % (input_list, min_max_val))
+            return min_max_val
+
+        except ImportError as ie:
+            lg.debug(" | ABORTED: [ImportError] %s" % ie.name)
+            raise ImportError("%s module not found." % ie.name)
+        except TypeError:
+            lg.debug(" | ABORTED: [TypeError] input_list is %s " % input_list)
+            raise TypeError("Input contains elements that are not integers or floats.")
+        except ValueError:
+            lg.debug(" | ABORTED: [ValueError] min_max_val does not exist")
+            raise ValueError("min_max_val does not exist.")
+        except:
+            print("Unknown error occurred.")
+            lg.warning(" | WARNING: Unknown error occurred")
+            raise
+
+if __name__ == "__main__":
+    #min_max(['a','b','c'])
+    min_max([])
