@@ -48,7 +48,6 @@ def test_min_max():
         min_max([])
 
 
-
 def test_sum_nums():
     from calculate_stuff import sum_nums
 

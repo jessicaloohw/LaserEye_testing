@@ -121,15 +121,14 @@ def min_max(input_list):
             if not all(isinstance(n, (int, float)) for n in input_list):
                 raise TypeError
 
-
             min_max_val = (min(input_list), max(input_list))
 
-            if not (isinstance(min_max_val,tuple)):
+            if not (isinstance(min_max_val, tuple)):
                 print(type(min_max_val))
                 raise ValueError
 
-
-            lg.info(' | SUCCESS: min_max of %s is %s' % (input_list, min_max_val))
+            lg.info(' | SUCCESS: min_max of %s is %s' % (input_list,
+                                                         min_max_val))
             return min_max_val
 
         except ImportError as ie:
@@ -137,7 +136,8 @@ def min_max(input_list):
             raise ImportError("%s module not found." % ie.name)
         except TypeError:
             lg.debug(" | ABORTED: [TypeError] input_list is %s " % input_list)
-            raise TypeError("Input contains elements that are not integers or floats.")
+            raise TypeError("Input contains elements that are not integers or "
+                            "floats.")
         except ValueError:
             lg.debug(" | ABORTED: [ValueError] min_max_val does not exist")
             raise ValueError("min_max_val does not exist.")
@@ -145,7 +145,3 @@ def min_max(input_list):
             print("Unknown error occurred.")
             lg.warning(" | WARNING: Unknown error occurred")
             raise
-
-if __name__ == "__main__":
-    #min_max(['a','b','c'])
-    min_max([])
