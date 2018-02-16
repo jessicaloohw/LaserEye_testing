@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 
 
 def test_max_diff():
@@ -36,6 +37,15 @@ def test_min_max():
     assert(min_max_val1 == (1, 5))
     assert(min_max_val2 == (-5, 4))
     assert(min_max_val3 == (-6.2, 3))
+
+    with pytest.raises(ImportError):
+        import Number
+
+    with pytest.raises(TypeError):
+        min_max([1, 'b', 'c'])
+
+    with pytest.raises(ValueError):
+        min_max([])
 
 
 def test_sum_nums():
