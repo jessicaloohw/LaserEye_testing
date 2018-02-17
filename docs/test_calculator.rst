@@ -1,7 +1,7 @@
-calculate\_stuff module
+test\_calculator module
 =======================
 
-.. automodule:: calculate_stuff
+.. automodule:: test_calculator
     :members:
     :undoc-members:
     :show-inheritance:

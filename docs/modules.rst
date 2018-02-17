@@ -1,8 +1,8 @@
-LaserEye_testing
-================
+LaserEye_testing_assignment06
+=============================
 
 .. toctree::
    :maxdepth: 4
 
-   calculate_stuff
-   test_calculate_stuff
+   calculator
+   test_calculator
