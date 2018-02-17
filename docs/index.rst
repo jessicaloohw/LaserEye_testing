@@ -11,7 +11,6 @@ Welcome to Calculator's documentation!
    :caption: Contents:
 
    modules
-   calculator
 
 Indices and tables
 ==================
