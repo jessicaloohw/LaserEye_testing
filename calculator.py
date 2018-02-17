@@ -14,8 +14,7 @@ class Calculator:
         self.input_list = input_list
         self.filename_log = filename_log
         self.sum = None
-        self.min = None
-        self.max = None
+        self.min_max = None
         self.max_diff = None
 
         lg.basicConfig(filename=self.filename_log,
@@ -27,7 +26,7 @@ class Calculator:
         """ Calculates the sum of numbers in the list
 
         :param input_list: a list of numbers
-        :returns sum_val: the sum of numbers
+        :assigns sum: the sum of numbers
         :raises TypeError: input_list is not a list of integers/floats
         :raises ValueError: input_list is empty
                             or sum_val is NaN
@@ -42,8 +41,6 @@ class Calculator:
             if np.isnan(sum_val):
                 raise ValueError
             self.sum = sum_val
-
-            return sum_val
 
         except TypeError:
             raise TypeError('input_list must be a list of integers/floats.'
@@ -60,7 +57,7 @@ class Calculator:
         """ Calculates the minimum and maximum value in the list
 
         :param input_list: a list of numbers
-        :returns min_max: a tuple of the minimum and maximum values
+        :assigns min_max: a tuple of the minimum and maximum values
         :raises TypeError: input_list is not a list of integers/floats
         :raises ValueError: input_list is empty
                             or min_max_val is NaN
@@ -73,10 +70,7 @@ class Calculator:
                 raise ValueError
             if(np.isnan(min_max_val[0]) or np.isnan(min_max_val[1])):
                 raise ValueError
-            self.min = min_max_val[0]
-            self.max = min_max_val[1]
-
-            return min_max_val
+            self.min_max = min_max_val
 
         except TypeError:
             raise TypeError('input_list must be a list of integers/floats.')
@@ -92,7 +86,7 @@ class Calculator:
             in the list
 
         :param input_list: a list of numbers
-        :returns max_diff_val: the maximum absolute difference
+        :assigns max_diff: the maximum absolute difference
         :raises TypeError: input_list is not a list of integers/floats
         :raises ValueError: input_list contains less than two values
                             or max_diff_val is NaN
@@ -106,8 +100,6 @@ class Calculator:
             if(np.isnan(max_diff_val)):
                 raise ValueError
             self.max_diff = max_diff_val
-
-            return max_diff_val
 
         except TypeError:
             raise TypeError('input_list must be a list of integers/floats.')

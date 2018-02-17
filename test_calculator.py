@@ -7,30 +7,30 @@ def test_calculator():
 
     calc1 = Calculator(input_list=[1, 2, 3, 4, 5],
                        filename_log='test_calculator.log')
-    sum1 = calc1.calculate_sum()
-    min_max1 = calc1.calculate_min_max()
-    max_diff1 = calc1.calculate_max_diff()
-    assert(np.isclose(sum1, 15))
-    assert(min_max1 == (1, 5))
-    assert(np.isclose(max_diff1, 1))
+    calc1.calculate_sum()
+    calc1.calculate_min_max()
+    calc1.calculate_max_diff()
+    assert(np.isclose(calc1.sum, 15))
+    assert(calc1.min_max == (1, 5))
+    assert(np.isclose(calc1.max_diff, 1))
 
     calc2 = Calculator(input_list=[-6.2, -5, -3, -1.45],
                        filename_log='test_calculator.log')
-    sum2 = calc2.calculate_sum()
-    min_max2 = calc2.calculate_min_max()
-    max_diff2 = calc2.calculate_max_diff()
-    assert(np.isclose(sum2, -15.65))
-    assert(min_max2 == (-6.2, -1.45))
-    assert(np.isclose(max_diff2, 2))
+    calc2.calculate_sum()
+    calc2.calculate_min_max()
+    calc2.calculate_max_diff()
+    assert(np.isclose(calc2.sum, -15.65))
+    assert(calc2.min_max == (-6.2, -1.45))
+    assert(np.isclose(calc2.max_diff, 2))
 
     calc3 = Calculator(input_list=[2, 5, -7.5],
                        filename_log='test_calculator.log')
-    sum3 = calc3.calculate_sum()
-    min_max3 = calc3.calculate_min_max()
-    max_diff3 = calc3.calculate_max_diff()
-    assert(np.isclose(sum3, -0.5))
-    assert(min_max3 == (-7.5, 5))
-    assert(np.isclose(max_diff3, 12.5))
+    calc3.calculate_sum()
+    calc3.calculate_min_max()
+    calc3.calculate_max_diff()
+    assert(np.isclose(calc3.sum, -0.5))
+    assert(calc3.min_max == (-7.5, 5))
+    assert(np.isclose(calc3.max_diff, 12.5))
 
     calc4 = Calculator(input_list=['a', 'b', 'c'],
                        filename_log='test_calculator.log')
@@ -52,10 +52,10 @@ def test_calculator():
 
     calc6 = Calculator(input_list=[7],
                        filename_log='test_calculator.log')
-    sum6 = calc6.calculate_sum()
-    min_max6 = calc6.calculate_min_max()
-    assert(np.isclose(sum6, 7))
-    assert(min_max6 == (7, 7))
+    calc6.calculate_sum()
+    calc6.calculate_min_max()
+    assert(np.isclose(calc6.sum, 7))
+    assert(calc6.min_max == (7, 7))
     with pytest.raises(ValueError):
         calc6.calculate_max_diff()
 
